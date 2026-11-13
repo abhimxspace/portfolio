@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies · Abhishek Mishra (Abhim)</title>
+<meta name="description" content="Growth engineering case studies by Abhishek Mishra: Conversions API, WhatsApp CRM and geo-budget restructuring.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05060a; --panel:rgba(14,17,26,.72); --line:rgba(120,140,255,.14);
+  --text:#e9ecf5; --muted:#8b93a8; --cyan:#00e5ff; --violet:#8b5cf6; --pink:#ff3d9a; --green:#3dffa8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;cursor:default}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit;text-decoration:none}
+
+/* background layers */
+#net{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%)}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;filter:blur(120px);opacity:.35;z-index:0;pointer-events:none;animation:float 18s ease-in-out infinite}
+.g1{background:var(--violet);top:-160px;left:-120px}
+.g2{background:var(--cyan);bottom:-200px;right:-160px;animation-delay:-9s}
+@keyframes float{50%{transform:translate(80px,60px) scale(1.15)}}
+#cursor{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:1;
+  background:radial-gradient(circle,rgba(0,229,255,.10),transparent 65%);transform:translate(-50%,-50%);transition:opacity .3s}
+.scan{position:fixed;inset:0;z-index:50;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+
+main{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 24px 80px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(5,6,10,.6);border-bottom:1px solid var(--line)}
+.bar .in{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.bar .path{font-size:13px;color:var(--muted)}
+.bar .path b{color:var(--cyan);font-weight:500}
+.bar .acts{display:flex;gap:10px}
+.btn{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.02);cursor:pointer;color:var(--text);transition:.25s;position:relative;overflow:hidden}
+.btn:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(0,229,255,.35);color:var(--cyan)}
+.btn.solid{background:linear-gradient(90deg,var(--violet),var(--cyan));border:none;color:#05060a;font-weight:700}
+.btn.solid:hover{box-shadow:0 0 28px rgba(139,92,246,.6);color:#05060a}
+
+/* hero */
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;color:var(--green);border:1px solid rgba(61,255,168,.3);background:rgba(61,255,168,.06);padding:7px 14px;border-radius:999px;width:fit-content;margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+h1.name{font-size:clamp(46px,9vw,104px);line-height:.95;font-weight:700;letter-spacing:-.04em;position:relative}
+.name .l2{display:block;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink),var(--cyan));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 8s linear infinite}
+@keyframes shift{to{background-position:300% 0}}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;inset:0;opacity:0}
+.glitch::before{color:var(--cyan);animation:gl1 5s infinite}
+.glitch::after{color:var(--pink);animation:gl2 5s infinite}
+@keyframes gl1{0%,92%,100%{opacity:0;transform:none}93%{opacity:.8;transform:translate(-4px,2px);clip-path:inset(10% 0 60% 0)}95%{opacity:.8;transform:translate(3px,-2px);clip-path:inset(55% 0 15% 0)}}
+@keyframes gl2{0%,92%,100%{opacity:0;transform:none}94%{opacity:.8;transform:translate(4px,-1px);clip-path:inset(30% 0 40% 0)}96%{opacity:.8;transform:translate(-3px,2px);clip-path:inset(70% 0 5% 0)}}
+.role{font-size:clamp(18px,2.6vw,26px);color:var(--muted);margin-top:22px;min-height:1.6em}
+.role .typed{color:var(--text)}
+.caret{display:inline-block;width:10px;height:1.1em;background:var(--cyan);vertical-align:-3px;margin-left:4px;animation:blink 1s steps(1) infinite;box-shadow:0 0 10px var(--cyan)}
+@keyframes blink{50%{opacity:0}}
+.term{margin-top:40px;max-width:640px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,229,255,.05)}
+.term .tb{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.term .tb i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .tb i:nth-child(2){background:#febc2e}.term .tb i:nth-child(3){background:#28c840}
+.term pre{padding:18px 20px;font-size:13.5px;line-height:1.85;white-space:pre-wrap;min-height:190px;color:#c9d1e6}
+.term .k{color:var(--violet)}.term .s{color:var(--green)}.term .c{color:var(--cyan)}.term .p{color:var(--pink)}
+.scroll{margin-top:46px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.mouse{width:20px;height:32px;border:1.5px solid var(--muted);border-radius:12px;position:relative}
+.mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;background:var(--cyan);border-radius:2px;transform:translateX(-50%);animation:wheel 1.8s infinite}
+@keyframes wheel{to{transform:translate(-50%,12px);opacity:0}}
+
+/* sections */
+section{padding:70px 0}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+.sh .no{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:14px}
+.sh h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em}
+.sh .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:linear-gradient(130deg,transparent 30%,rgba(0,229,255,.6),rgba(139,92,246,.6),transparent 70%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s}
+.card:hover::before{opacity:1}
+.card:hover{box-shadow:0 20px 60px rgba(0,229,255,.08)}
+.card .shine{position:absolute;inset:0;pointer-events:none;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.08),transparent 40%)}
+
+.summary{font-size:clamp(17px,2vw,20px);color:#c8cee0;line-height:1.75}
+.summary b{color:var(--cyan);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.stat{text-align:left;padding:22px}
+.stat .n{font-size:40px;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.stat .t{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* timeline */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .prog{position:absolute;left:8px;top:6px;width:2px;height:0;background:linear-gradient(var(--cyan),var(--violet));box-shadow:0 0 12px var(--cyan);transition:height .2s linear}
+.job{position:relative;margin-bottom:22px}
+.job .node{position:absolute;left:-34px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.job .node::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--cyan)}
+.job .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.job h3{font-size:21px}
+.job .co{color:var(--cyan);font-size:15px;margin-top:2px}
+.job .when{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:6px;height:fit-content;white-space:nowrap}
+.job ul{list-style:none;margin-top:12px}
+.job .sub{font-size:12px;color:var(--violet);margin-top:18px;letter-spacing:.04em}
+.job li{position:relative;padding-left:22px;color:#b9c0d4;font-size:15px;margin-bottom:8px}
+.job li::before{content:"▹";position:absolute;left:0;color:var(--cyan)}
+
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.proj .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.proj .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(139,92,246,.15));border:1px solid var(--line)}
+.proj .st{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green)}
+.proj h3{font-size:19px;margin-bottom:8px}
+.proj p{color:var(--muted);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 9px;border-radius:6px;background:rgba(0,229,255,.06);color:#9fe9f5;border:1px solid rgba(0,229,255,.18)}
+
+/* skills */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.sk h4{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cyan);margin-bottom:14px;letter-spacing:.04em}
+.sk .tags{margin-top:0}
+.sk .tag{font-size:12.5px;padding:6px 11px;background:rgba(255,255,255,.03);color:#d6dbea;border-color:var(--line);transition:.25s}
+.sk .tag:hover{border-color:var(--violet);color:#fff;box-shadow:0 0 14px rgba(139,92,246,.4);transform:translateY(-2px)}
+
+/* marquee */
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;margin:10px 0 20px;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq .tr{display:flex;gap:48px;width:max-content;animation:mq 32s linear infinite;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted)}
+.marq span::before{content:"◆ ";color:var(--violet)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* edu + contact */
+.edu{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.edu h3{font-size:20px}.edu p{color:var(--muted)}
+.cta{text-align:center;padding:56px 28px}
+.cta h2{font-size:clamp(30px,5vw,52px);letter-spacing:-.03em;line-height:1.1}
+.cta p{color:var(--muted);margin:16px auto 30px;max-width:520px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;font-family:'JetBrains Mono',monospace}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),filter .9s}
+.rv.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.bar .path{display:none}.term pre{font-size:12px}.job .when{order:-1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
+
+</style><style>
+.cs{margin-bottom:70px}
+.cs .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--violet);letter-spacing:.08em;margin-bottom:10px}
+.cs h2.t{font-size:clamp(28px,4.4vw,44px);letter-spacing:-.025em;line-height:1.12;margin-bottom:14px}
+.cs .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:18px}
+.cols h4{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--cyan);margin-bottom:10px;letter-spacing:.06em}
+.cols p,.cols li{color:#b9c0d4;font-size:15px}
+.cols ul{list-style:none}.cols li{position:relative;padding-left:20px;margin-bottom:7px}
+.cols li::before{content:"▹";position:absolute;left:0;color:var(--cyan)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:6px 0 4px}
+.flow .n{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:9px 13px;border-radius:9px;border:1px solid rgba(0,229,255,.3);background:rgba(0,229,255,.06);color:#bff6ff;animation:nodeglow 3s ease-in-out infinite}
+.flow .n:nth-child(4n+3){animation-delay:.6s}.flow .n:nth-child(4n+5){animation-delay:1.2s}.flow .n:nth-child(4n+7){animation-delay:1.8s}
+@keyframes nodeglow{50%{box-shadow:0 0 18px rgba(0,229,255,.45);border-color:var(--cyan)}}
+.flow .a{color:var(--violet);font-family:'JetBrains Mono',monospace}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba div{padding:16px;border-radius:12px;border:1px solid var(--line)}
+.ba .b{background:rgba(255,61,154,.05);border-color:rgba(255,61,154,.25)}
+.ba .af{background:rgba(61,255,168,.05);border-color:rgba(61,255,168,.25)}
+.ba h5{font-family:'JetBrains Mono',monospace;font-size:11.5px;margin-bottom:8px;letter-spacing:.06em}
+.ba .b h5{color:var(--pink)}.ba .af h5{color:var(--green)}
+.ba p{font-size:14.5px;color:#c8cee0}
+.note{font-size:12.5px;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-top:14px}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:34px 0 10px}
+.toc a{display:block}
+.toc .num{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:12px}
+.toc h3{font-size:17px;margin-top:6px}
+@media(max-width:640px){.ba{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<canvas id="net"></canvas><div class="grid-bg"></div><div class="glow g1"></div><div class="glow g2"></div><div id="cursor"></div><div class="scan"></div>
+<div class="bar"><div class="in">
+  <div class="path mono">~/abhimxspace/<b>case-studies</b> <span style="color:var(--green)">●</span></div>
+  <div class="acts"><a class="btn" href="./">← Portfolio</a><a class="btn solid" href="resume.html">Resume →</a></div>
+</div></div>
+<main>
+  <header class="hero" style="min-height:62vh">
+    <div class="status mono rv"><span class="dot"></span> growth engineering · case files</div>
+    <h1 class="name rv d1" style="font-size:clamp(42px,8vw,88px)">Problems I found.<span class="l2">Systems I built.</span></h1>
+    <p class="role rv d2" style="font-family:'Space Grotesk';max-width:680px">Three examples of fixing growth problems by building the system behind the ads, not just tuning the campaigns. Client details are anonymised.</p>
+    <div class="toc">
+      <a href="#capi" class="card rv d2"><div class="shine"></div><span class="num">CASE 01</span><h3>Teaching Meta what a good lead looks like</h3></a>
+      <a href="#whatsapp" class="card rv d3"><div class="shine"></div><span class="num">CASE 02</span><h3>Getting WhatsApp sales chats into the CRM</h3></a>
+      <a href="#geo" class="card rv d4"><div class="shine"></div><span class="num">CASE 03</span><h3>Stopping big markets from eating the budget</h3></a>
+    </div>
+  </header>
+
+  <article class="cs" id="capi">
+    <div class="sh rv"><span class="no">01.</span><h2>Conversions API</h2><span class="ln"></span></div>
+    <div class="kicker rv">CRM → META · SERVER-SIDE SIGNAL</div>
+    <h2 class="t rv d1">Teaching Meta what a good lead looks like</h2>
+    <div class="meta rv d1"><span class="tag">n8n (self-hosted)</span><span class="tag">Meta Conversions API</span><span class="tag">Lead Ads</span><span class="tag">CRM webhooks</span><span class="tag">SHA-256 hashing</span></div>
+    <div class="cols">
+      <div class="card rv d1"><div class="shine"></div><h4>// THE PROBLEM</h4><p>An international education consultancy ran Lead Ads in many countries. Meta optimised for <b>form fills</b>, so it found people who filled forms, not people who became students. An audit of the CRM → Meta dataset showed that <b>only "Closed Won" events were firing</b>. That is too rare and too slow for Meta's algorithm to learn from.</p></div>
+      <div class="card rv d2"><div class="shine"></div><h4>// WHAT I BUILT</h4><ul>
+        <li>A self-hosted n8n workflow that receives each Lead Ads lead, pulls the full lead from the Graph API and creates it in the CRM.</li>
+        <li>A second workflow that listens for CRM stage changes and sends <b>Lead → Qualified Lead → Converted</b> back to Meta as server-side events.</li>
+        <li>Hashed email and phone (E.164, SHA-256), the lead_id kept for matching, and event_id used for deduplication.</li>
+        <li>gclid / fbclid / ctwa_clid capture so Google and click-to-WhatsApp leads can be attributed too.</li>
+      </ul></div>
+    </div>
+    <div class="card rv"><div class="shine"></div><h4 class="mono" style="color:var(--cyan);font-size:12.5px;margin-bottom:12px">// FLOW</h4>
+      <div class="flow"><span class="n">Lead Ad form</span><span class="a">→</span><span class="n">n8n webhook</span><span class="a">→</span><span class="n">Graph API: fetch lead</span><span class="a">→</span><span class="n">CRM: create lead</span><span class="a">→</span><span class="n">Sales updates stage</span><span class="a">→</span><span class="n">n8n: map + hash</span><span class="a">→</span><span class="n">Meta CAPI event</span></div>
+    </div>
+    <div class="ba rv" style="margin-top:18px">
+      <div class="b"><h5>BEFORE</h5><p>1 event type (Closed Won), so Meta had almost no signal. The algorithm optimised for whoever filled forms fastest.</p></div>
+      <div class="af"><h5>AFTER</h5><p>A full funnel of events reaches Meta within minutes of each stage change. Campaigns could be optimised toward qualified leads, and the account moved from chasing lead volume to lead quality. Lead conversion rate rose <b>3% in 6 weeks</b> alongside funnel and creative work.</p></div>
+    </div>
+    <p class="note">→ template version of this workflow: github.com/abhimxspace/marketing-automation-toolkit</p>
+  </article>
+
+  <article class="cs" id="whatsapp">
+    <div class="sh rv"><span class="no">02.</span><h2>WhatsApp CRM</h2><span class="ln"></span></div>
+    <div class="kicker rv">CHROME EXTENSION · ZOHO · N8N</div>
+    <h2 class="t rv d1">Getting WhatsApp sales chats into the CRM</h2>
+    <div class="meta rv d1"><span class="tag">Chrome Extension</span><span class="tag">WhatsApp Web</span><span class="tag">Zoho CRM</span><span class="tag">n8n webhooks</span><span class="tag">AI replies</span></div>
+    <div class="cols">
+      <div class="card rv d1"><div class="shine"></div><h4>// THE PROBLEM</h4><p>Most of the selling happened on WhatsApp, but <b>none of it reached the CRM</b>. Lead stages were updated by hand, if at all. Follow-ups lived in people's heads, and reporting on the sales pipeline was guesswork. Paid WhatsApp CRM platforms cost a recurring fee per user and would have meant changing how the team works.</p></div>
+      <div class="card rv d2"><div class="shine"></div><h4>// WHAT I BUILT</h4><ul>
+        <li>A Chrome extension that turns WhatsApp Web into a sales workspace: a lead sidebar next to every chat and a Kanban pipeline.</li>
+        <li>Reply templates, scheduled follow-ups, keyword-triggered chatbot flows and AI-suggested replies.</li>
+        <li>Every new lead and stage change goes out as a webhook to n8n, which writes it into Zoho.</li>
+        <li>Built in-house with AI tools instead of buying a SaaS subscription.</li>
+      </ul></div>
+    </div>
+    <div class="card rv"><div class="shine"></div><h4 class="mono" style="color:var(--cyan);font-size:12.5px;margin-bottom:12px">// FLOW</h4>
+      <div class="flow"><span class="n">WhatsApp chat</span><span class="a">→</span><span class="n">Extension sidebar</span><span class="a">→</span><span class="n">Stage change</span><span class="a">→</span><span class="n">Webhook</span><span class="a">→</span><span class="n">n8n</span><span class="a">→</span><span class="n">Zoho CRM</span><span class="a">→</span><span class="n">CAPI (Case 01)</span></div>
+    </div>
+    <div class="ba rv" style="margin-top:18px">
+      <div class="b"><h5>BEFORE</h5><p>WhatsApp conversations were invisible to the CRM. Stages were stale, follow-ups were missed, and click-to-WhatsApp ads couldn't be judged on the leads they produced.</p></div>
+      <div class="af"><h5>AFTER</h5><p>The sales team works from one screen and the CRM updates itself. WhatsApp stages now feed the Conversions API pipeline, so click-to-WhatsApp campaigns get quality signals too. No per-user SaaS fee.</p></div>
+    </div>
+  </article>
+
+  <article class="cs" id="geo">
+    <div class="sh rv"><span class="no">03.</span><h2>Geo budget control</h2><span class="ln"></span></div>
+    <div class="kicker rv">META ADS · ACCOUNT STRUCTURE</div>
+    <h2 class="t rv d1">Stopping big markets from eating the budget</h2>
+    <div class="meta rv d1"><span class="tag">Meta Ads</span><span class="tag">ABO vs CBO</span><span class="tag">Geo-targeting</span><span class="tag">Audience fatigue</span><span class="tag">Ads Library research</span></div>
+    <div class="cols">
+      <div class="card rv d1"><div class="shine"></div><h4>// THE PROBLEM</h4><p>Campaigns targeted <b>22+ countries</b> in grouped ad sets. Meta pushed spend toward the cheapest, most populous markets, so the small high-value markets that mattered to the business barely got delivery. Meanwhile, tiny audiences in island markets kept seeing the same ads until they tuned them out.</p></div>
+      <div class="card rv d2"><div class="shine"></div><h4>// WHAT I CHANGED</h4><ul>
+        <li>Restructured into <b>per-country ABO ad sets</b> grouped by region (GCC, Asia, Europe, Africa, Oceania), so every market got a guaranteed budget.</li>
+        <li>Added fatigue rules for small markets (e.g. Mauritius, Maldives, Seychelles): frequency watch, creative rotation, cooldowns.</li>
+        <li>Used Meta Ads Library competitor research to rewrite underperforming ads.</li>
+        <li>For a new domestic product, launched campaigns with sharp messaging aimed at working professionals.</li>
+      </ul></div>
+    </div>
+    <div class="stats" style="margin-top:4px">
+      <div class="card stat rv d1"><div class="n" data-count="22" data-suffix="+">0</div><div class="t">countries with their own budget</div></div>
+      <div class="card stat rv d2"><div class="n" data-count="364">0</div><div class="t">leads from the domestic launch</div></div>
+      <div class="card stat rv d3"><div class="n" data-prefix="₹" data-count="150">0</div><div class="t">approx. cost per lead on that launch</div></div>
+    </div>
+    <div class="ba rv" style="margin-top:18px">
+      <div class="b"><h5>BEFORE</h5><p>Spend followed population, not priority. Small markets were starved or burned out.</p></div>
+      <div class="af"><h5>AFTER</h5><p>Budget follows business priority, and every market is controlled and measured on its own. Fatigue in small markets is managed instead of ignored.</p></div>
+    </div>
+  </article>
+
+  <section id="contact" style="padding-top:20px">
+    <div class="card cta rv"><div class="shine"></div>
+      <h2>Want this kind of thinking <span class="name"><span class="l2" style="display:inline">on your team?</span></span></h2>
+      <p>I run the campaigns and build the system behind them.</p>
+      <div class="row"><a class="btn solid" href="https://www.linkedin.com/in/abhishek-mishra-ln/" target="_blank" rel="noopener">Connect on LinkedIn →</a><a class="btn" href="resume.html">Resume</a><a class="btn" href="https://github.com/abhimxspace/marketing-automation-toolkit" target="_blank" rel="noopener">Toolkit on GitHub</a></div>
+    </div>
+  </section>
+  <footer>&lt;/&gt; built by abhim · 2026</footer>
+</main>
+<script>
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function countUp(el){if(el.dataset.done)return;el.dataset.done=1;const to=+el.dataset.count,suf=el.dataset.suffix||'';let s=null;
+  const step=t=>{if(!s)s=t;const p=Math.min((t-s)/1400,1);el.textContent=(el.dataset.prefix||'')+Math.floor(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+
+/* card tilt + shine */
+document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+    c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+    if(!c.classList.contains('job')&&!c.classList.contains('cta')){const rx=((y/r.height)-.5)*-6,ry=((x/r.width)-.5)*6;c.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`}});
+  c.addEventListener('mouseleave',()=>{c.style.transform=''})});
+
+/* cursor glow */
+const cur=document.getElementById('cursor');addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+
+/* particle network */
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[];const mouse={x:-999,y:-999};
+function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';
+  const n=Math.min(90,Math.floor(innerWidth*innerHeight/16000));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35*devicePixelRatio,vy:(Math.random()-.5)*.35*devicePixelRatio}))}
+addEventListener('resize',rs);rs();
+addEventListener('mousemove',e=>{mouse.x=e.clientX*devicePixelRatio;mouse.y=e.clientY*devicePixelRatio});
+(function draw(){cx.clearRect(0,0,W,H);const D=140*devicePixelRatio;
+  for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);if(dm<D*1.3){p.x+=(p.x-mouse.x)*.004;p.y+=(p.y-mouse.y)*.004}
+    cx.fillStyle='rgba(0,229,255,.7)';cx.beginPath();cx.arc(p.x,p.y,1.4*devicePixelRatio,0,7);cx.fill()}
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<D){cx.strokeStyle=`rgba(139,92,246,${(1-d/D)*.35})`;cx.lineWidth=devicePixelRatio*.8;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+  requestAnimationFrame(draw)})();
+</script>
+</body>
+</html>
