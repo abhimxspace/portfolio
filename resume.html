@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume · Abhishek Mishra (Abhim)</title>
+<meta name="description" content="Resume of Abhishek Mishra: Performance Marketer & Growth Builder. Meta Ads, CRM, marketing automation and AI tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05060a; --panel:rgba(14,17,26,.72); --line:rgba(120,140,255,.14);
+  --text:#e9ecf5; --muted:#8b93a8; --cyan:#00e5ff; --violet:#8b5cf6; --pink:#ff3d9a; --green:#3dffa8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;cursor:default}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit;text-decoration:none}
+
+/* background layers */
+#net{position:fixed;inset:0;z-index:0;pointer-events:none}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%)}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;filter:blur(120px);opacity:.35;z-index:0;pointer-events:none;animation:float 18s ease-in-out infinite}
+.g1{background:var(--violet);top:-160px;left:-120px}
+.g2{background:var(--cyan);bottom:-200px;right:-160px;animation-delay:-9s}
+@keyframes float{50%{transform:translate(80px,60px) scale(1.15)}}
+#cursor{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:1;
+  background:radial-gradient(circle,rgba(0,229,255,.10),transparent 65%);transform:translate(-50%,-50%);transition:opacity .3s}
+.scan{position:fixed;inset:0;z-index:50;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+
+main{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 24px 80px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(5,6,10,.6);border-bottom:1px solid var(--line)}
+.bar .in{max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.bar .path{font-size:13px;color:var(--muted)}
+.bar .path b{color:var(--cyan);font-weight:500}
+.bar .acts{display:flex;gap:10px}
+.btn{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:9px 16px;border-radius:8px;border:1px solid var(--line);background:rgba(255,255,255,.02);cursor:pointer;color:var(--text);transition:.25s;position:relative;overflow:hidden}
+.btn:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(0,229,255,.35);color:var(--cyan)}
+.btn.solid{background:linear-gradient(90deg,var(--violet),var(--cyan));border:none;color:#05060a;font-weight:700}
+.btn.solid:hover{box-shadow:0 0 28px rgba(139,92,246,.6);color:#05060a}
+
+/* hero */
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;color:var(--green);border:1px solid rgba(61,255,168,.3);background:rgba(61,255,168,.06);padding:7px 14px;border-radius:999px;width:fit-content;margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+h1.name{font-size:clamp(46px,9vw,104px);line-height:.95;font-weight:700;letter-spacing:-.04em;position:relative}
+.name .l2{display:block;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink),var(--cyan));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 8s linear infinite}
+@keyframes shift{to{background-position:300% 0}}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;inset:0;opacity:0}
+.glitch::before{color:var(--cyan);animation:gl1 5s infinite}
+.glitch::after{color:var(--pink);animation:gl2 5s infinite}
+@keyframes gl1{0%,92%,100%{opacity:0;transform:none}93%{opacity:.8;transform:translate(-4px,2px);clip-path:inset(10% 0 60% 0)}95%{opacity:.8;transform:translate(3px,-2px);clip-path:inset(55% 0 15% 0)}}
+@keyframes gl2{0%,92%,100%{opacity:0;transform:none}94%{opacity:.8;transform:translate(4px,-1px);clip-path:inset(30% 0 40% 0)}96%{opacity:.8;transform:translate(-3px,2px);clip-path:inset(70% 0 5% 0)}}
+.role{font-size:clamp(18px,2.6vw,26px);color:var(--muted);margin-top:22px;min-height:1.6em}
+.role .typed{color:var(--text)}
+.caret{display:inline-block;width:10px;height:1.1em;background:var(--cyan);vertical-align:-3px;margin-left:4px;animation:blink 1s steps(1) infinite;box-shadow:0 0 10px var(--cyan)}
+@keyframes blink{50%{opacity:0}}
+.term{margin-top:40px;max-width:640px;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(0,229,255,.05)}
+.term .tb{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.term .tb i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term .tb i:nth-child(2){background:#febc2e}.term .tb i:nth-child(3){background:#28c840}
+.term pre{padding:18px 20px;font-size:13.5px;line-height:1.85;white-space:pre-wrap;min-height:190px;color:#c9d1e6}
+.term .k{color:var(--violet)}.term .s{color:var(--green)}.term .c{color:var(--cyan)}.term .p{color:var(--pink)}
+.scroll{margin-top:46px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.mouse{width:20px;height:32px;border:1.5px solid var(--muted);border-radius:12px;position:relative}
+.mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;background:var(--cyan);border-radius:2px;transform:translateX(-50%);animation:wheel 1.8s infinite}
+@keyframes wheel{to{transform:translate(-50%,12px);opacity:0}}
+
+/* sections */
+section{padding:70px 0}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+.sh .no{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:14px}
+.sh h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em}
+.sh .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;transform-style:preserve-3d}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:18px;padding:1px;background:linear-gradient(130deg,transparent 30%,rgba(0,229,255,.6),rgba(139,92,246,.6),transparent 70%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s}
+.card:hover::before{opacity:1}
+.card:hover{box-shadow:0 20px 60px rgba(0,229,255,.08)}
+.card .shine{position:absolute;inset:0;pointer-events:none;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.08),transparent 40%)}
+
+.summary{font-size:clamp(17px,2vw,20px);color:#c8cee0;line-height:1.75}
+.summary b{color:var(--cyan);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.stat{text-align:left;padding:22px}
+.stat .n{font-size:40px;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.stat .t{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* timeline */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .prog{position:absolute;left:8px;top:6px;width:2px;height:0;background:linear-gradient(var(--cyan),var(--violet));box-shadow:0 0 12px var(--cyan);transition:height .2s linear}
+.job{position:relative;margin-bottom:22px}
+.job .node{position:absolute;left:-34px;top:30px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.job .node::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--cyan)}
+.job .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.job h3{font-size:21px}
+.job .co{color:var(--cyan);font-size:15px;margin-top:2px}
+.job .when{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:6px;height:fit-content;white-space:nowrap}
+.job ul{list-style:none;margin-top:12px}
+.job .sub{font-size:12px;color:var(--violet);margin-top:18px;letter-spacing:.04em}
+.job li{position:relative;padding-left:22px;color:#b9c0d4;font-size:15px;margin-bottom:8px}
+.job li::before{content:"▹";position:absolute;left:0;color:var(--cyan)}
+
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.proj .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.proj .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(139,92,246,.15));border:1px solid var(--line)}
+.proj .st{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green)}
+.proj h3{font-size:19px;margin-bottom:8px}
+.proj p{color:var(--muted);font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 9px;border-radius:6px;background:rgba(0,229,255,.06);color:#9fe9f5;border:1px solid rgba(0,229,255,.18)}
+
+/* skills */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.sk h4{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cyan);margin-bottom:14px;letter-spacing:.04em}
+.sk .tags{margin-top:0}
+.sk .tag{font-size:12.5px;padding:6px 11px;background:rgba(255,255,255,.03);color:#d6dbea;border-color:var(--line);transition:.25s}
+.sk .tag:hover{border-color:var(--violet);color:#fff;box-shadow:0 0 14px rgba(139,92,246,.4);transform:translateY(-2px)}
+
+/* marquee */
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;margin:10px 0 20px;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marq .tr{display:flex;gap:48px;width:max-content;animation:mq 32s linear infinite;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--muted)}
+.marq span::before{content:"◆ ";color:var(--violet)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* edu + contact */
+.edu{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.edu h3{font-size:20px}.edu p{color:var(--muted)}
+.cta{text-align:center;padding:56px 28px}
+.cta h2{font-size:clamp(30px,5vw,52px);letter-spacing:-.03em;line-height:1.1}
+.cta p{color:var(--muted);margin:16px auto 30px;max-width:520px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;font-family:'JetBrains Mono',monospace}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1),filter .9s}
+.rv.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+@media(max-width:640px){.stats{grid-template-columns:1fr 1fr}.bar .path{display:none}.term pre{font-size:12px}.job .when{order:-1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}}
+
+/* ---------- PRINT: clean one-column PDF ---------- */
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#fff;color:#111;font-size:11pt}
+  #net,.grid-bg,.glow,#cursor,.scan,.bar,.scroll,.term,.marq,.cta .row,.status,footer{display:none!important}
+  .hero{min-height:auto;padding:0 0 10px}
+  h1.name{font-size:30pt;color:#111}.name .l2{-webkit-text-fill-color:#4c1d95;color:#4c1d95;background:none}
+  .glitch::before,.glitch::after{display:none}
+  .role{display:none}.caret{display:none}
+  section{padding:8px 0}.stats{grid-template-columns:repeat(6,1fr);gap:6px;margin-top:8px}.stat .t{font-size:8pt;margin-top:2px}.job li{margin-bottom:3px}.job .sub{color:#4c1d95;margin-top:8px}.proj .hd{display:none}.proj h3{font-size:11pt;margin-bottom:2px}.proj .tags,.sk h4{margin-top:4px}
+  .sh{margin-bottom:10px}.sh h2{font-size:15pt;color:#111}.sh .no{color:#4c1d95}
+  .card{background:none;border:none;padding:0 0 8px;box-shadow:none}.card::before,.shine{display:none}
+  .summary,.job li,.proj p,.edu p{color:#222;font-size:10.5pt}
+  .summary b,.job .co,.sk h4{color:#4c1d95}
+  .stat .n{-webkit-text-fill-color:#4c1d95;font-size:18pt}.stat{padding:4px 0}
+  .tl::before,.tl .prog,.job .node{display:none}.tl{padding-left:0}
+  .tag{background:none;border:1px solid #bbb;color:#333}
+  .pgrid,.sgrid{grid-template-columns:1fr 1fr;gap:10px}
+  .rv{opacity:1!important;transform:none!important;filter:none!important}
+  .cta{padding:10px 0;text-align:left}.cta h2{font-size:13pt}
+  .print-contact{display:block!important}
+}
+.print-contact{display:none;font-size:10pt;color:#333;margin-top:6px}
+</style>
+</head>
+<body>
+
+<canvas id="net"></canvas>
+<div class="grid-bg"></div>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div id="cursor"></div>
+<div class="scan"></div>
+
+<div class="bar">
+  <div class="in">
+    <div class="path mono">~/abhimxspace/<b>resume</b> <span style="color:var(--green)">●</span></div>
+    <div class="acts">
+      <a class="btn" href="./">← Portfolio</a>
+      <button class="btn solid" onclick="window.print()">⤓ Download PDF</button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <header class="hero">
+    <div class="status mono rv"><span class="dot"></span> available for GTM & growth roles</div>
+    <h1 class="name rv d1"><span class="glitch" data-t="Abhishek">Abhishek</span><span class="l2">Mishra.</span></h1>
+    <div class="role mono rv d2">&gt; <span class="typed" id="typed"></span><span class="caret"></span></div>
+    <div class="print-contact" style="font-weight:600;font-size:12pt;color:#111">Performance Marketing & Marketing Automation Lead | AI-Driven Growth</div>
+    <div class="print-contact">linkedin.com/in/abhishek-mishra-ln · github.com/abhimxspace · abhimxspace.github.io/portfolio · New Delhi, India</div>
+
+    <div class="term rv d3">
+      <div class="tb"><i></i><i></i><i></i></div>
+      <pre class="mono" id="term"></pre>
+    </div>
+
+    <div class="scroll mono rv d4"><span class="mouse"></span> scroll to explore</div>
+  </header>
+
+  <section id="about">
+    <div class="sh rv"><span class="no">01.</span><h2>Summary</h2><span class="ln"></span></div>
+    <div class="card rv d1"><div class="shine"></div>
+      <p class="summary">Performance marketer with <b>4+ years in paid acquisition</b> who now <b>builds the systems behind the ads</b>. I run Meta and Google campaigns across <b>22+ countries</b> and lead the performance team at BS Eduworld. I also build the marketing stack myself with AI: <b>self-hosted n8n Conversions API workflows</b>, a <b>WhatsApp CRM Chrome extension</b> connected to Zoho, Apps Script reporting tools and <b>custom MCP servers</b> that connect ad accounts to Claude. On top of that I produce AI video ads and automate SEO work.</p>
+    </div>
+    <div class="stats">
+      <div class="card stat rv d1"><div class="n" data-count="4" data-suffix="+">0</div><div class="t">years in performance marketing</div></div>
+      <div class="card stat rv d2"><div class="n" data-count="22" data-suffix="+">0</div><div class="t">countries in live campaigns</div></div>
+      <div class="card stat rv d3"><div class="n" data-count="40" data-suffix="%">0</div><div class="t">organic traffic lift in 3 months (SEO overhaul)</div></div>
+      <div class="card stat rv d4"><div class="n" data-count="20" data-suffix="+">0</div><div class="t">team members led and mentored</div></div>
+      <div class="card stat rv d5"><div class="n" data-count="364">0</div><div class="t">PhD leads at about ₹150 CPL</div></div>
+      <div class="card stat rv d1"><div class="n" data-count="50" data-suffix="+">0</div><div class="t">qualified leads per day at a lower CPL</div></div>
+    </div>
+  </section>
+
+  <div class="marq"><div class="tr" id="mq"></div></div>
+
+  <section id="experience">
+    <div class="sh rv"><span class="no">02.</span><h2>Experience</h2><span class="ln"></span></div>
+    <div class="tl" id="tl"><div class="prog" id="prog"></div>
+
+      <div class="job card rv"><div class="shine"></div><span class="node"></span>
+        <div class="top"><div><h3>Performance Marketing Manager & Team Lead</h3><div class="co">BS Eduworld · New Delhi · International (42+ country network) & India</div></div><span class="when">Jul 2025 — Present</span></div>
+        <div class="sub mono">// paid media & growth</div>
+        <ul>
+          <li>Own paid acquisition across 4 Meta ad accounts and Google Ads for international Honorary Doctorate nominations and domestic PhD admissions, with dedicated campaign structures across 22+ countries.</li>
+          <li>Improved lead conversion rate by 3% in 6 weeks through funnel optimisation, audience segmentation and creative testing, and moved the account focus from lead volume to lead quality.</li>
+          <li>Restructured geo-targeting into per-country ABO ad sets so that large markets stopped absorbing the budget, and managed audience fatigue in small markets (Mauritius, Maldives, Seychelles).</li>
+          <li>Launched domestic PhD campaigns that produced 364 leads at about ₹150 CPL, using Ads Library competitor research to rewrite underperforming ads.</li>
+          <li>Lead the performance team: KPIs, budget allocation, scaling and CPL decisions.</li>
+        </ul>
+        <div class="sub mono">// marketing automation & martech (built in-house with AI)</div>
+        <ul>
+          <li>Self-hosted n8n server running a Meta Lead Ads → CRM workflow that acts as a server-side Conversions API and sends lead-stage events back to Meta.</li>
+          <li>WhatsApp CRM Chrome extension connected to Zoho: lead sidebar, Kanban pipeline, templates, scheduled follow-ups, chatbot flows and AI-suggested replies, with every stage change synced to Zoho through n8n.</li>
+          <li>Apps Script tools: Lead Ads → Sheets sync, a daily multi-account Meta performance report and a leave-management web app.</li>
+          <li>Conversion tracking: Meta Pixel through GTM. Audited the Zoho → Meta CAPI dataset and mapped Lead and Qualified Lead events with gclid / fbclid / ctwa_clid capture.</li>
+          <li>Driving the plan for an in-house CRM to replace Zoho, with built-in ad conversion tracking and a Claude connection. Built Custom Audiences with E.164 formatting across 61 country codes.</li>
+        </ul>
+        <div class="sub mono">// ai workflows, video & seo</div>
+        <ul>
+          <li>Built Node.js MCP servers for Claude: a Meta Ads server for analysis and reporting, and an AI-video (LTX) server.</li>
+          <li>Produced AI ad films and reels (Gemini/Veo, Vidu, Kling, WAN 2.2, AI voiceover, CapCut), including "The Legacy Code" Honorary Doctorate ad. The AI creatives performed well in live campaigns.</li>
+          <li>Automated SEO through Claude and Search Console: keyword clustering, content briefs, on-page audits and schema markup.</li>
+          <li>Point of contact for agencies and vendors (social media agencies, MGID, Kraya AI, AiSensy). Built lead-gen landing pages and supported the sub-brand sites.</li>
+        </ul>
+      </div>
+
+      <div class="job card rv"><div class="shine"></div><span class="node"></span>
+        <div class="top"><div><h3>Digital Marketing Specialist – B2B</h3><div class="co">Growth Grapher LLC · New Delhi · Client: PropTechBuzz</div></div><span class="when">Jan 2024 — Apr 2025</span></div>
+        <ul>
+          <li>Ran B2B lead generation on LinkedIn Ads aimed at CFOs, CROs and Investment Directors in real estate and PropTech.</li>
+          <li>Ran Account-Based Marketing with LinkedIn Matched Audiences to win pipeline from named enterprise accounts.</li>
+          <li>Ran Meta and Google Ads for B2B awareness and retargeting, with weekly ROAS, CTR and conversion dashboards.</li>
+          <li>Wrote SEO-led blogs, landing pages and ad copy, using SEMrush and Ahrefs for keyword gap analysis.</li>
+        </ul>
+      </div>
+
+      <div class="job card rv"><div class="shine"></div><span class="node"></span>
+        <div class="top"><div><h3>Performance Marketing Lead & SEO Expert</h3><div class="co">Affiliate Marketing Agency · New Delhi</div></div><span class="when">Aug 2021 — Dec 2023</span></div>
+        <ul>
+          <li>Led a 20+ member team across paid media, SEO and content, owning traffic, conversion and CPA targets in healthcare, e-commerce and digital products.</li>
+          <li>Scaled paid acquisition on Meta, Google, LinkedIn, Bing and native ads across the USA, UK, Australia, Canada, Germany, France and Africa.</li>
+          <li>A website SEO overhaul delivered a 40% increase in organic traffic within 3 months.</li>
+          <li>Drove 30%+ revenue growth on affiliate campaigns and improved team productivity by 25%. Brought in Zapier, Trello, Asana, HubSpot and Lusha.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sh rv"><span class="no">03.</span><h2>Projects</h2><span class="ln"></span></div>
+    <div class="pgrid">
+      <div class="card proj rv d1"><div class="shine"></div>
+        <div class="hd"><div class="ico">💬</div><span class="st">● production</span></div>
+        <h3>WhatsApp CRM Extension</h3>
+        <p>Turns WhatsApp Web into a sales CRM, with a Kanban pipeline, templates, follow-ups, chatbot flows and AI replies. Every lead and stage change syncs to Zoho through n8n.</p>
+        <div class="tags"><span class="tag">Chrome Ext</span><span class="tag">Zoho</span><span class="tag">n8n</span><span class="tag">AI</span></div>
+      </div>
+      <div class="card proj rv d2"><div class="shine"></div>
+        <div class="hd"><div class="ico">🔁</div><span class="st">● production</span></div>
+        <h3>Lead Ads → CRM CAPI</h3>
+        <p>A self-hosted n8n pipeline that sends CRM lead stages back to Meta as server-side Conversions API events, so campaigns optimise for quality.</p>
+        <div class="tags"><span class="tag">n8n</span><span class="tag">Conversions API</span><span class="tag">Webhooks</span></div>
+      </div>
+      <div class="card proj rv d3"><div class="shine"></div>
+        <div class="hd"><div class="ico">🤖</div><span class="st">● production</span></div>
+        <h3>MCP Servers for Claude</h3>
+        <p>A Meta Ads MCP server connecting the ad accounts to Claude Desktop, plus an AI-video (LTX) MCP server.</p>
+        <div class="tags"><span class="tag">Node.js</span><span class="tag">MCP</span><span class="tag">Claude</span></div>
+      </div>
+      <div class="card proj rv d1"><div class="shine"></div>
+        <div class="hd"><div class="ico">🛒</div><span class="st">● building</span></div>
+        <h3>ListHub · Listing Automation</h3>
+        <p>Researches top-selling competitor listings, generates AI listing options, fills bulk-upload templates and publishes to 5 Flipkart seller accounts through browser automation.</p>
+        <div class="tags"><span class="tag">Flipkart</span><span class="tag">Browser Automation</span><span class="tag">LLM</span></div>
+      </div>
+      <div class="card proj rv d2"><div class="shine"></div>
+        <div class="hd"><div class="ico">📊</div><span class="st">● production</span></div>
+        <h3>Apps Script Toolkit</h3>
+        <p>A Lead Ads → Sheets sync, a daily multi-account Meta report that replaced manual updates, and a leave-management web app.</p>
+        <div class="tags"><span class="tag">Apps Script</span><span class="tag">Graph API</span></div>
+      </div>
+      <div class="card proj rv d3"><div class="shine"></div>
+        <div class="hd"><div class="ico">🎬</div><span class="st">● live in ads</span></div>
+        <h3>AI Video Ad Films</h3>
+        <p>"The Legacy Code" and a convocation lead-gen film, made with Veo, Kling, Vidu, WAN 2.2 and AI voiceover.</p>
+        <div class="tags"><span class="tag">Veo</span><span class="tag">Kling</span><span class="tag">CapCut</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sh rv"><span class="no">04.</span><h2>Skills</h2><span class="ln"></span></div>
+    <div class="sgrid">
+      <div class="card sk rv d1"><h4>// PAID MEDIA</h4><div class="tags"><span class="tag">Meta Ads</span><span class="tag">Advantage+</span><span class="tag">Click-to-WhatsApp</span><span class="tag">Google Ads</span><span class="tag">YouTube</span><span class="tag">LinkedIn Ads & ABM</span><span class="tag">Bing</span><span class="tag">Native</span></div></div>
+      <div class="card sk rv d2"><h4>// AUTOMATION & CRM</h4><div class="tags"><span class="tag">n8n</span><span class="tag">Apps Script</span><span class="tag">Zapier</span><span class="tag">Zoho CRM</span><span class="tag">HubSpot</span><span class="tag">WhatsApp flows</span><span class="tag">Webhooks</span><span class="tag">Graph API</span></div></div>
+      <div class="card sk rv d3"><h4>// TRACKING & DATA</h4><div class="tags"><span class="tag">Meta Pixel</span><span class="tag">Conversions API</span><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">Search Console</span><span class="tag">gclid/fbclid</span><span class="tag">Custom Audiences</span></div></div>
+      <div class="card sk rv d4"><h4>// AI TOOLS</h4><div class="tags"><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">ChatGPT</span><span class="tag">Gemini / Veo</span><span class="tag">Kling</span><span class="tag">Vidu</span><span class="tag">WAN 2.2</span><span class="tag">AdCreative.ai</span></div></div>
+      <div class="card sk rv d5"><h4>// SEO & CONTENT</h4><div class="tags"><span class="tag">SEMrush</span><span class="tag">Ahrefs</span><span class="tag">Keyword Clustering</span><span class="tag">Technical SEO</span><span class="tag">Schema</span><span class="tag">Landing Pages</span><span class="tag">Ad Copy</span></div></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sh rv"><span class="no">05.</span><h2>Education</h2><span class="ln"></span></div>
+    <div class="card edu rv d1"><div class="shine"></div>
+      <div><h3>Bachelor of Pharmacy (B.Pharm)</h3><p>A.K.T.U University · Thesis: Automated Digital Strategies for Newly Launched Pharmaceutical Companies</p>
+      <p style="font-size:14px;margin-top:6px">Internships: Aliana Healthcare, Baddi (healthcare marketing, 2022) · General Government Hospital, Delhi (pharmacy operations, 2022)</p></div>
+      <span class="mono" style="color:var(--cyan)">2019 — 2023</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card cta rv"><div class="shine"></div>
+      <h2>Let's build what <span class="name"><span class="l2" style="display:inline">grows next.</span></span></h2>
+      <p>Hiring for GTM or growth, or need someone who can run the ads and build the machine behind them?</p>
+      <div class="row">
+        <a class="btn solid" href="https://www.linkedin.com/in/abhishek-mishra-ln/" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        <a class="btn" href="https://github.com/abhimxspace" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="./">Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>&lt;/&gt; built by abhim · 2026</footer>
+</main>
+
+<script>
+/* typing roles */
+const roles=["Performance Marketing Lead","Marketing Automation Builder","AI-Driven Growth","MCP & n8n Tinkerer","GTM Operator"];
+const tEl=document.getElementById('typed');let ri=0,ci=0,del=false;
+(function type(){const w=roles[ri];tEl.textContent=w.slice(0,ci);
+  if(!del&&ci<w.length){ci++;setTimeout(type,70)}
+  else if(!del){del=true;setTimeout(type,1600)}
+  else if(ci>0){ci--;setTimeout(type,35)}
+  else{del=false;ri=(ri+1)%roles.length;setTimeout(type,300)}})();
+
+/* terminal */
+const lines=[
+ ['<span class="p">$</span> <span class="c">whoami</span>',0],
+ ['abhishek mishra <span class="k">// performance marketing & automation lead · new delhi</span>',1],
+ ['<span class="p">$</span> <span class="c">cat</span> stack.json',0],
+ ['{ <span class="k">"ads"</span>: [<span class="s">"Meta"</span>, <span class="s">"Google"</span>, <span class="s">"LinkedIn"</span>], <span class="k">"crm"</span>: <span class="s">"Zoho"</span>, <span class="k">"automation"</span>: [<span class="s">"n8n"</span>, <span class="s">"Apps Script"</span>], <span class="k">"ai"</span>: [<span class="s">"Claude"</span>, <span class="s">"MCP"</span>] }',1],
+ ['<span class="p">$</span> <span class="c">./run</span> --mode=growth',0],
+ ['<span class="s">✔</span> ads → crm → conversions api → optimised campaigns',1],
+];
+const term=document.getElementById('term');
+// keep base in sync for instant lines
+const origAdd=lines.map(l=>l);(async()=>{term.dataset.base='';for(const [html,instant] of origAdd){
+  if(instant){term.dataset.base+=html+'\n';term.innerHTML=term.dataset.base;await new Promise(r=>setTimeout(r,350));continue}
+  const tmp=document.createElement('div');tmp.innerHTML=html;const txt=tmp.textContent;
+  for(let i=0;i<=txt.length;i++){term.innerHTML=term.dataset.base+txt.slice(0,i)+'<span class="caret"></span>';await new Promise(r=>setTimeout(r,28))}
+  term.dataset.base+=html+'\n';term.innerHTML=term.dataset.base;await new Promise(r=>setTimeout(r,250))}
+  term.innerHTML=term.dataset.base+'<span class="p">$</span> <span class="caret"></span>'})();
+
+/* marquee */
+const mqItems=["Meta Ads","n8n","Conversions API","Zoho CRM","Apps Script","Claude","MCP","Amazon SP-API","Lead Gen","Growth Systems","Node.js","GTM"];
+document.getElementById('mq').innerHTML=[...mqItems,...mqItems].map(x=>`<span>${x}</span>`).join('');
+
+/* reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function countUp(el){if(el.dataset.done)return;el.dataset.done=1;const to=+el.dataset.count,suf=el.dataset.suffix||'';let s=null;
+  const step=t=>{if(!s)s=t;const p=Math.min((t-s)/1400,1);el.textContent=Math.floor(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+
+/* print: show final numbers */
+addEventListener('beforeprint',()=>document.querySelectorAll('[data-count]').forEach(el=>{el.dataset.done=1;el.textContent=el.dataset.count+(el.dataset.suffix||'')}));
+
+/* timeline progress */
+const tl=document.getElementById('tl'),prog=document.getElementById('prog');
+addEventListener('scroll',()=>{const r=tl.getBoundingClientRect(),vh=innerHeight;const p=Math.min(Math.max((vh*.6-r.top)/r.height,0),1);prog.style.height=(p*(r.height-12))+'px'},{passive:true});
+
+/* card tilt + shine */
+document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+    c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+    if(!c.classList.contains('job')&&!c.classList.contains('cta')){const rx=((y/r.height)-.5)*-6,ry=((x/r.width)-.5)*6;c.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`}});
+  c.addEventListener('mouseleave',()=>{c.style.transform=''})});
+
+/* cursor glow */
+const cur=document.getElementById('cursor');addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+
+/* particle network */
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[];const mouse={x:-999,y:-999};
+function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';
+  const n=Math.min(90,Math.floor(innerWidth*innerHeight/16000));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35*devicePixelRatio,vy:(Math.random()-.5)*.35*devicePixelRatio}))}
+addEventListener('resize',rs);rs();
+addEventListener('mousemove',e=>{mouse.x=e.clientX*devicePixelRatio;mouse.y=e.clientY*devicePixelRatio});
+(function draw(){cx.clearRect(0,0,W,H);const D=140*devicePixelRatio;
+  for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);if(dm<D*1.3){p.x+=(p.x-mouse.x)*.004;p.y+=(p.y-mouse.y)*.004}
+    cx.fillStyle='rgba(0,229,255,.7)';cx.beginPath();cx.arc(p.x,p.y,1.4*devicePixelRatio,0,7);cx.fill()}
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<D){cx.strokeStyle=`rgba(139,92,246,${(1-d/D)*.35})`;cx.lineWidth=devicePixelRatio*.8;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}
+  requestAnimationFrame(draw)})();
+</script>
+</body>
+</html>

@@ -4,4 +4,4 @@ Personal portfolio site: performance marketing, marketing automation and AI tool
 
 **Live site:** https://abhimxspace.github.io/portfolio/
 
-Single-file static site (HTML + CSS), hosted on GitHub Pages.
+Pages: `index.html` (portfolio) and `resume.html` (animated resume with a print-to-PDF version). Static site (HTML + CSS), hosted on GitHub Pages.
