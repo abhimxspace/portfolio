@@ -182,6 +182,9 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
 }
 .print-contact{display:none;font-size:10pt;color:#333;margin-top:6px}
 </style>
+<meta name="theme-color" content="#05060a">
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
 </head>
 <body>
 
@@ -197,7 +200,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
     <div class="acts">
       <a class="btn" href="./">← Portfolio</a>
       <a class="btn" href="case-studies.html">Case studies</a>
-      <button class="btn solid" onclick="window.print()">⤓ Download PDF</button>
+      <a class="btn solid" href="Abhishek_Mishra_Resume.pdf" download>⤓ Download PDF</a>
     </div>
   </div>
 </div>
@@ -209,7 +212,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
     <h1 class="name rv d1"><span class="glitch" data-t="Abhishek">Abhishek</span><span class="l2">Mishra.</span></h1>
     <div class="role mono rv d2">&gt; <span class="typed" id="typed"></span><span class="caret"></span></div>
     <div class="print-contact" style="font-weight:600;font-size:12pt;color:#111">Performance Marketing & Marketing Automation Lead | AI-Driven Growth</div>
-    <div class="print-contact">linkedin.com/in/abhishek-mishra-ln · github.com/abhimxspace · abhimxspace.github.io/portfolio · New Delhi, India</div>
+    <div class="print-contact">thebulletinpress@gmail.com · +91-9810631184 · linkedin.com/in/abhishek-mishra-ln · github.com/abhimxspace · abhimxspace.github.io/portfolio · New Delhi, India</div>
 
     <div class="term rv d3">
       <div class="tb"><i></i><i></i><i></i></div>
@@ -222,15 +225,15 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
   <section id="about">
     <div class="sh rv"><span class="no">01.</span><h2>Summary</h2><span class="ln"></span></div>
     <div class="card rv d1"><div class="shine"></div>
-      <p class="summary">Performance marketer with <b>4+ years in paid acquisition</b> who now <b>builds the systems behind the ads</b>. I run Meta and Google campaigns across <b>22+ countries</b> and lead the performance team at BS Eduworld. I also build the marketing stack myself with AI: <b>self-hosted n8n Conversions API workflows</b>, a <b>WhatsApp CRM Chrome extension</b> connected to Zoho, Apps Script reporting tools and <b>custom MCP servers</b> that connect ad accounts to Claude. On top of that I produce AI video ads and automate SEO work.</p>
+      <p class="summary">Performance marketer with <b>4+ years in paid acquisition</b> who now <b>builds the systems behind the ads</b>. I run Meta and Google campaigns across <b>22+ countries</b> and lead the performance team at BS Eduworld. I also build the marketing stack myself with AI: <b>self-hosted n8n Conversions API workflows</b>, a <b>WhatsApp CRM Chrome extension</b> connected to Zoho, Apps Script reporting tools, <b>WhatsApp API and webhook integrations</b>, and <b>custom MCP servers (Node.js, with React front-ends)</b> that connect ad accounts to Claude. On top of that I produce AI video ads, automate SEO work and run the agency and vendor relationships.</p>
     </div>
     <div class="stats">
-      <div class="card stat rv d1"><div class="n" data-count="4" data-suffix="+">0</div><div class="t">years in performance marketing</div></div>
-      <div class="card stat rv d2"><div class="n" data-count="22" data-suffix="+">0</div><div class="t">countries in live campaigns</div></div>
-      <div class="card stat rv d3"><div class="n" data-count="40" data-suffix="%">0</div><div class="t">organic traffic lift in 3 months (SEO overhaul)</div></div>
-      <div class="card stat rv d4"><div class="n" data-count="20" data-suffix="+">0</div><div class="t">team members led and mentored</div></div>
-      <div class="card stat rv d5"><div class="n" data-count="364">0</div><div class="t">PhD leads at about ₹150 CPL</div></div>
-      <div class="card stat rv d1"><div class="n" data-count="50" data-suffix="+">0</div><div class="t">qualified leads per day at a lower CPL</div></div>
+      <div class="card stat rv d1"><div class="n" data-count="4" data-suffix="+">4+</div><div class="t">years in performance marketing</div></div>
+      <div class="card stat rv d2"><div class="n" data-count="22" data-suffix="+">22+</div><div class="t">countries in live campaigns</div></div>
+      <div class="card stat rv d3"><div class="n" data-count="40" data-suffix="%">40%</div><div class="t">organic traffic lift in 3 months (SEO overhaul)</div></div>
+      <div class="card stat rv d4"><div class="n" data-count="20" data-suffix="+">20+</div><div class="t">team members led and mentored</div></div>
+      <div class="card stat rv d5"><div class="n" data-count="364">364</div><div class="t">PhD leads at about ₹150 CPL</div></div>
+      <div class="card stat rv d1"><div class="n" data-count="50" data-suffix="+">50+</div><div class="t">qualified leads per day at a lower CPL</div></div>
     </div>
   </section>
 
@@ -260,10 +263,21 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
         </ul>
         <div class="sub mono">// ai workflows, video & seo</div>
         <ul>
-          <li>Built Node.js MCP servers for Claude: a Meta Ads server for analysis and reporting, and an AI-video (LTX) server.</li>
           <li>Produced AI ad films and reels (Gemini/Veo, Vidu, Kling, WAN 2.2, AI voiceover, CapCut), including "The Legacy Code" Honorary Doctorate ad. The AI creatives performed well in live campaigns.</li>
           <li>Automated SEO through Claude and Search Console: keyword clustering, content briefs, on-page audits and schema markup.</li>
-          <li>Point of contact for agencies and vendors (social media agencies, MGID, Kraya AI, AiSensy). Built lead-gen landing pages and supported the sub-brand sites.</li>
+        </ul>
+        <div class="sub mono">// development: apis, webhooks, mcp servers & bots</div>
+        <ul>
+          <li>MCP server development: built and run Node.js MCP servers for Claude (Meta Ads analysis and reporting, AI-video generation), with React-based front-ends for dashboards and controls.</li>
+          <li>WhatsApp API development: wired WhatsApp Business (Cloud) API messaging into the n8n lead workflows for instant follow-up on regional numbers, and built a WhatsApp Web CRM extension with chatbot flows and AI replies.</li>
+          <li>Webhook and API development: webhook endpoints and event pipelines that connect Meta Lead Ads, website enquiry forms, the custom CRM and Meta Conversions API, plus REST APIs with API-key access for internal tools.</li>
+          <li>Bot development: WhatsApp keyword and menu chatbots with an AI fallback, alert bots, and autonomous marketplace-research bots for e-commerce. Approved Amazon SP-API developer.</li>
+        </ul>
+        <div class="sub mono">// agencies, vendors & web</div>
+        <ul>
+          <li>Point of contact for every external agency, run in sequence: <b>Click Agency → K Social → Markomind → Unnity</b>. Wrote the briefs and brand kits, reviewed output, and ended engagements that didn't deliver growth.</li>
+          <li>Managed platform vendors and evaluations: MGID native ads (UK and GCC), Kraya AI and AiSensy (WhatsApp), Adspirer.</li>
+          <li>Built lead-gen landing pages (domestic PhD admissions, webinar) and supported the Global Achievers Conclave and Legacy Lives sub-brand sites.</li>
         </ul>
       </div>
 
@@ -280,10 +294,18 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
       <div class="job card rv"><div class="shine"></div><span class="node"></span>
         <div class="top"><div><h3>Performance Marketing Lead & SEO Expert</h3><div class="co">Affiliate Marketing Agency · New Delhi</div></div><span class="when">Aug 2021 — Dec 2023</span></div>
         <ul>
-          <li>Led a 20+ member team across paid media, SEO and content, owning traffic, conversion and CPA targets in healthcare, e-commerce and digital products.</li>
+          <li>Led a 20+ member team across paid media, SEO and content, owning traffic, conversion and CPA targets. Portfolio mix: <b>80% health niche, 20% electronics</b>.</li>
           <li>Scaled paid acquisition on Meta, Google, LinkedIn, Bing and native ads across the USA, UK, Australia, Canada, Germany, France and Africa.</li>
           <li>A website SEO overhaul delivered a 40% increase in organic traffic within 3 months.</li>
           <li>Drove 30%+ revenue growth on affiliate campaigns and improved team productivity by 25%. Brought in Zapier, Trello, Asana, HubSpot and Lusha.</li>
+        </ul>
+      </div>
+
+      <div class="job card rv"><div class="shine"></div><span class="node"></span>
+        <div class="top"><div><h3>Freelance Growth & Production Partner</h3><div class="co">Independent · Clients in India and abroad</div></div><span class="when">Alongside full-time roles</span></div>
+        <ul>
+          <li>Delivered client work end to end, sourcing and managing the right vendors for each job, from SEO and content to ad campaigns and on-site video production shoots.</li>
+          <li>Built paid-ads setups, landing pages and automations for small businesses and e-commerce sellers, and developed custom tools and apps where off-the-shelf SaaS didn't fit.</li>
         </ul>
       </div>
     </div>
@@ -338,6 +360,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
       <div class="card sk rv d2"><h4>// AUTOMATION & CRM</h4><div class="tags"><span class="tag">n8n</span><span class="tag">Apps Script</span><span class="tag">Zapier</span><span class="tag">Zoho CRM</span><span class="tag">HubSpot</span><span class="tag">WhatsApp flows</span><span class="tag">Webhooks</span><span class="tag">Graph API</span></div></div>
       <div class="card sk rv d3"><h4>// TRACKING & DATA</h4><div class="tags"><span class="tag">Meta Pixel</span><span class="tag">Conversions API</span><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">Search Console</span><span class="tag">gclid/fbclid</span><span class="tag">Custom Audiences</span></div></div>
       <div class="card sk rv d4"><h4>// AI TOOLS</h4><div class="tags"><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">ChatGPT</span><span class="tag">Gemini / Veo</span><span class="tag">Kling</span><span class="tag">Vidu</span><span class="tag">WAN 2.2</span><span class="tag">AdCreative.ai</span></div></div>
+      <div class="card sk rv d1"><h4>// DEVELOPMENT</h4><div class="tags"><span class="tag">MCP Servers</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">REST APIs</span><span class="tag">Webhooks</span><span class="tag">WhatsApp Cloud API</span><span class="tag">Chatbots</span><span class="tag">Chrome Extensions</span><span class="tag">Amazon SP-API</span></div></div>
       <div class="card sk rv d5"><h4>// SEO & CONTENT</h4><div class="tags"><span class="tag">SEMrush</span><span class="tag">Ahrefs</span><span class="tag">Keyword Clustering</span><span class="tag">Technical SEO</span><span class="tag">Schema</span><span class="tag">Landing Pages</span><span class="tag">Ad Copy</span></div></div>
     </div>
   </section>
@@ -357,6 +380,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
       <p>Hiring for GTM or growth, or need someone who can run the ads and build the machine behind them?</p>
       <div class="row">
         <a class="btn solid" href="https://www.linkedin.com/in/abhishek-mishra-ln/" target="_blank" rel="noopener">Connect on LinkedIn →</a>
+        <a class="btn" href="mailto:thebulletinpress@gmail.com">Email me</a>
         <a class="btn" href="https://github.com/abhimxspace" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="./">Portfolio</a>
       </div>
@@ -368,7 +392,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 0 10px;f
 
 <script>
 /* typing roles */
-const roles=["Performance Marketing Lead","Marketing Automation Builder","AI-Driven Growth","MCP & n8n Tinkerer","GTM Operator"];
+const roles=["Performance Marketing Lead","Marketing Automation Builder","AI-Driven Growth","MCP Server Developer","API & Webhook Builder","GTM Operator"];
 const tEl=document.getElementById('typed');let ri=0,ci=0,del=false;
 (function type(){const w=roles[ri];tEl.textContent=w.slice(0,ci);
   if(!del&&ci<w.length){ci++;setTimeout(type,70)}
@@ -381,7 +405,7 @@ const lines=[
  ['<span class="p">$</span> <span class="c">whoami</span>',0],
  ['abhishek mishra <span class="k">// performance marketing & automation lead · new delhi</span>',1],
  ['<span class="p">$</span> <span class="c">cat</span> stack.json',0],
- ['{ <span class="k">"ads"</span>: [<span class="s">"Meta"</span>, <span class="s">"Google"</span>, <span class="s">"LinkedIn"</span>], <span class="k">"crm"</span>: <span class="s">"Zoho"</span>, <span class="k">"automation"</span>: [<span class="s">"n8n"</span>, <span class="s">"Apps Script"</span>], <span class="k">"ai"</span>: [<span class="s">"Claude"</span>, <span class="s">"MCP"</span>] }',1],
+ ['{ <span class="k">"ads"</span>: [<span class="s">"Meta"</span>, <span class="s">"Google"</span>, <span class="s">"LinkedIn"</span>], <span class="k">"crm"</span>: <span class="s">"Zoho"</span>, <span class="k">"automation"</span>: [<span class="s">"n8n"</span>, <span class="s">"Apps Script"</span>], <span class="k">"ai"</span>: [<span class="s">"Claude"</span>, <span class="s">"MCP"</span>], <span class="k">"dev"</span>: [<span class="s">"Node.js"</span>, <span class="s">"React"</span>, <span class="s">"Webhooks"</span>, <span class="s">"WhatsApp API"</span>] }',1],
  ['<span class="p">$</span> <span class="c">./run</span> --mode=growth',0],
  ['<span class="s">✔</span> ads → crm → conversions api → optimised campaigns',1],
 ];
@@ -395,14 +419,14 @@ const origAdd=lines.map(l=>l);(async()=>{term.dataset.base='';for(const [html,in
   term.innerHTML=term.dataset.base+'<span class="p">$</span> <span class="caret"></span>'})();
 
 /* marquee */
-const mqItems=["Meta Ads","n8n","Conversions API","Zoho CRM","Apps Script","Claude","MCP","Amazon SP-API","Lead Gen","Growth Systems","Node.js","GTM"];
+const mqItems=["Meta Ads","n8n","Conversions API","Zoho CRM","Apps Script","Claude","MCP","Amazon SP-API","Lead Gen","Growth Systems","Node.js","React","Webhooks","WhatsApp Cloud API","REST APIs","GTM"];
 document.getElementById('mq').innerHTML=[...mqItems,...mqItems].map(x=>`<span>${x}</span>`).join('');
 
 /* reveal + counters */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
   e.target.querySelectorAll('[data-count]').forEach(countUp);io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-function countUp(el){if(el.dataset.done)return;el.dataset.done=1;const to=+el.dataset.count,suf=el.dataset.suffix||'';let s=null;
+function countUp(el){if(el.dataset.done)return;el.dataset.done=1;const to=+el.dataset.count,suf=el.dataset.suffix||'';let s=null;el.textContent='0'+suf;
   const step=t=>{if(!s)s=t;const p=Math.min((t-s)/1400,1);el.textContent=Math.floor(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
 
 /* print: show final numbers */

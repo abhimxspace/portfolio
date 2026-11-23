@@ -1,0 +1,48 @@
+/* ---------- Light / dark theme (shared by all pages) ---------- */
+.theme-toggle{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;font-size:17px;line-height:1;transition:border-color .25s,transform .25s,background .25s;flex:none}
+.theme-toggle:hover{transform:rotate(-15deg);border-color:var(--cyan,var(--accent,#6d5efc))}
+.theme-toggle .sun{display:none}
+[data-theme="light"] .theme-toggle .sun{display:inline}
+[data-theme="light"] .theme-toggle .moon{display:none}
+.theme-toggle.floating{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--panel)}
+html.theme-anim *,html.theme-anim *::before,html.theme-anim *::after{transition:background-color .35s ease,color .35s ease,border-color .35s ease!important}
+
+/* ---- light palette: resume + case studies (neon design) ---- */
+[data-theme="light"]{
+  --bg:#f5f7fc; --panel:rgba(255,255,255,.85); --line:rgba(60,70,140,.16);
+  --text:#121626; --muted:#5b6478; --cyan:#0284c7; --violet:#7c3aed; --pink:#db2777; --green:#059669;
+  /* index page palette */
+  --accent:#5b4ce6; --accent2:#0d9488;
+  color-scheme:light;
+}
+[data-theme="light"] body{background:var(--bg)}
+[data-theme="light"] .scan{display:none}
+[data-theme="light"] .glow{opacity:.16}
+[data-theme="light"] #net{opacity:.45}
+[data-theme="light"] #cursor{background:radial-gradient(circle,rgba(2,132,199,.08),transparent 65%)}
+[data-theme="light"] .grid-bg{background-image:linear-gradient(rgba(2,132,199,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(2,132,199,.07) 1px,transparent 1px)}
+[data-theme="light"] .bar{background:rgba(245,247,252,.78)}
+[data-theme="light"] .btn{background:rgba(255,255,255,.7)}
+[data-theme="light"] .btn.solid{color:#fff;background:linear-gradient(90deg,var(--violet),var(--cyan))}
+[data-theme="light"] .btn.solid:hover{color:#fff}
+[data-theme="light"] .card{box-shadow:0 1px 2px rgba(20,30,70,.05),0 8px 28px rgba(20,30,70,.06)}
+[data-theme="light"] .summary,[data-theme="light"] .ba p{color:#2a3147}
+[data-theme="light"] .job li,[data-theme="light"] .cols p,[data-theme="light"] .cols li{color:#38405a}
+[data-theme="light"] .tag{color:#075985;background:rgba(2,132,199,.07);border-color:rgba(2,132,199,.22)}
+[data-theme="light"] .sk .tag{color:#2a3147;background:#fff}
+[data-theme="light"] .sk .tag:hover{color:var(--violet)}
+[data-theme="light"] .flow .n{color:#075985;background:rgba(2,132,199,.07)}
+[data-theme="light"] .status{background:rgba(5,150,105,.08);border-color:rgba(5,150,105,.3)}
+[data-theme="light"] .job .node{background:#fff}
+/* the terminal window stays dark in both themes (it is a terminal) */
+[data-theme="light"] .term{background:#0e111a;border-color:#1f2433;box-shadow:0 24px 60px rgba(20,30,70,.18)}
+[data-theme="light"] .term pre{color:#c9d1e6}
+[data-theme="light"] .term .k{color:#a78bfa}[data-theme="light"] .term .s{color:#3dffa8}[data-theme="light"] .term .c{color:#00e5ff}[data-theme="light"] .term .p{color:#ff3d9a}
+
+/* ---- light palette: index page ---- */
+[data-theme="light"] nav{background:rgba(245,247,252,.85)}
+[data-theme="light"] .card:hover{border-color:#c5cbe0}
+[data-theme="light"] .chip{background:#eef1f8;color:#2a3147}
+[data-theme="light"] .btn.primary{background:var(--accent);color:#fff}
+
+@media print{.theme-toggle{display:none!important}}
